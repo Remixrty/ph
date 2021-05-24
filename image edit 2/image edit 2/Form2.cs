@@ -154,6 +154,8 @@ namespace image_edit_2
 			Application.Exit();
 		}
 		#endregion
+
+		
 	}
 
 

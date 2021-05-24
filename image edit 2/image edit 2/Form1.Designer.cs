@@ -43,6 +43,8 @@
 			this.button10 = new System.Windows.Forms.Button();
 			this.button11 = new System.Windows.Forms.Button();
 			this.button12 = new System.Windows.Forms.Button();
+			this.button13 = new System.Windows.Forms.Button();
+			this.button14 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -165,7 +167,7 @@
 			// button9
 			// 
 			this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button9.Location = new System.Drawing.Point(715, 508);
+			this.button9.Location = new System.Drawing.Point(715, 365);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(125, 30);
 			this.button9.TabIndex = 12;
@@ -176,7 +178,7 @@
 			// button10
 			// 
 			this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button10.Location = new System.Drawing.Point(715, 469);
+			this.button10.Location = new System.Drawing.Point(715, 326);
 			this.button10.Name = "button10";
 			this.button10.Size = new System.Drawing.Size(124, 33);
 			this.button10.TabIndex = 13;
@@ -187,7 +189,7 @@
 			// button11
 			// 
 			this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button11.Location = new System.Drawing.Point(715, 544);
+			this.button11.Location = new System.Drawing.Point(715, 401);
 			this.button11.Name = "button11";
 			this.button11.Size = new System.Drawing.Size(125, 30);
 			this.button11.TabIndex = 14;
@@ -198,7 +200,7 @@
 			// button12
 			// 
 			this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button12.Location = new System.Drawing.Point(715, 580);
+			this.button12.Location = new System.Drawing.Point(714, 608);
 			this.button12.Name = "button12";
 			this.button12.Size = new System.Drawing.Size(125, 30);
 			this.button12.TabIndex = 15;
@@ -206,12 +208,36 @@
 			this.button12.UseVisualStyleBackColor = true;
 			this.button12.Click += new System.EventHandler(this.button12_Click);
 			// 
+			// button13
+			// 
+			this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button13.Location = new System.Drawing.Point(715, 437);
+			this.button13.Name = "button13";
+			this.button13.Size = new System.Drawing.Size(125, 30);
+			this.button13.TabIndex = 16;
+			this.button13.Text = "Фильтрация";
+			this.button13.UseVisualStyleBackColor = true;
+			this.button13.Click += new System.EventHandler(this.button13_Click);
+			// 
+			// button14
+			// 
+			this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button14.Location = new System.Drawing.Point(714, 473);
+			this.button14.Name = "button14";
+			this.button14.Size = new System.Drawing.Size(125, 30);
+			this.button14.TabIndex = 17;
+			this.button14.Text = "Фильтрация";
+			this.button14.UseVisualStyleBackColor = true;
+			this.button14.Click += new System.EventHandler(this.button14_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.WindowFrame;
 			this.ClientSize = new System.Drawing.Size(851, 648);
+			this.Controls.Add(this.button14);
+			this.Controls.Add(this.button13);
 			this.Controls.Add(this.button12);
 			this.Controls.Add(this.button11);
 			this.Controls.Add(this.button10);
@@ -253,6 +279,8 @@
 		private System.Windows.Forms.Button button10;
 		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.Button button12;
+		private System.Windows.Forms.Button button13;
+		private System.Windows.Forms.Button button14;
 	}
 }
 
