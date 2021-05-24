@@ -1828,10 +1828,24 @@ namespace image_edit_2
 			this.Hide();
 		}
 
+		private void button13_Click(object sender, EventArgs e)
+		{
+			Form5 zop = new Form5();
+			zop.Show(this);
+			this.Hide();
+		}
 		private void button12_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
+
 		#endregion
+
+		private void button14_Click(object sender, EventArgs e)
+		{
+			Form7 vop = new Form7();
+			vop.Show(this);
+			this.Hide();
+		}
 	}
 }
