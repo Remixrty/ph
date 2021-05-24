@@ -6,6 +6,10 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Threading;
+using static System.Environment;
+
 
 namespace image_edit_2
 {
@@ -21,273 +25,282 @@ namespace image_edit_2
 		}
 		private void button1_Click(object sender, EventArgs e) //видимость текстбоксов
 		{
-			int X = trackBar1.Value;
-			int Y = trackBar2.Value;
-
-			textBox1.Visible = true;
-			button3.Visible = true;
-			
-			if (X >= 2) textBox2.Visible = true; else textBox2.Visible = false;
-			if (X >= 3)	textBox3.Visible = true; else textBox3.Visible = false;
-			if (X >= 4)	textBox4.Visible = true; else textBox4.Visible = false;
-			if (X >= 5) textBox5.Visible = true; else textBox5.Visible = false;
-			if (X >= 6)	textBox6.Visible = true; else textBox6.Visible = false;
-			if (X >= 7) textBox7.Visible = true; else textBox7.Visible = false;
-			if (X >= 8)	textBox8.Visible = true; else textBox8.Visible = false;
-			if (X >= 9)	textBox9.Visible = true; else textBox9.Visible = false;
-			if (X >= 10) textBox10.Visible = true; else textBox10.Visible = false;
-
-			if (Y >= 2) textBox11.Visible = true; else textBox11.Visible = false;
-			if (Y >= 3) textBox21.Visible = true; else textBox21.Visible = false;
-			if (Y >= 4)	textBox31.Visible = true; else textBox31.Visible = false;
-			if (Y >= 5) textBox41.Visible = true; else textBox41.Visible = false;
-			if (Y >= 6) textBox51.Visible = true; else textBox51.Visible = false;
-			if (Y >= 7) textBox61.Visible = true; else textBox61.Visible = false;
-			if (Y >= 8) textBox71.Visible = true; else textBox71.Visible = false;
-			if (Y >= 9)	textBox81.Visible = true; else textBox81.Visible = false;
-			if (Y >= 10) textBox91.Visible = true; else textBox91.Visible = false;
-
-			if ((X >= 2) && (Y >= 2)) textBox12.Visible = true;
-			else textBox12.Visible = false;
-			if ((X >= 2) && (Y >= 3)) textBox22.Visible = true;
-			else textBox22.Visible = false;
-			if ((X >= 2) && (Y >= 4)) textBox32.Visible = true;
-			else textBox32.Visible = false;
-			if ((X >= 2) && (Y >= 5)) textBox42.Visible = true;
-			else textBox42.Visible = false;
-			if ((X >= 2) && (Y >= 6)) textBox52.Visible = true;
-			else textBox52.Visible = false;
-			if ((X >= 2) && (Y >= 7)) textBox62.Visible = true;
-			else textBox62.Visible = false;
-			if ((X >= 2) && (Y >= 8)) textBox72.Visible = true;
-			else textBox72.Visible = false;
-			if ((X >= 2) && (Y >= 9)) textBox82.Visible = true;
-			else textBox82.Visible = false;
-			if ((X >= 2) && (Y >= 10)) textBox92.Visible = true;
-			else textBox92.Visible = false;
-
-			if ((X >= 3) && (Y >= 2)) textBox13.Visible = true;
-			else textBox13.Visible = false;
-			if ((X >= 3) && (Y >= 3)) textBox23.Visible = true;
-			else textBox23.Visible = false;
-			if ((X >= 3) && (Y >= 4)) textBox33.Visible = true;
-			else textBox33.Visible = false;
-			if ((X >= 3) && (Y >= 5)) textBox43.Visible = true;
-			else textBox43.Visible = false;
-			if ((X >= 3) && (Y >= 6)) textBox53.Visible = true;
-			else textBox53.Visible = false;
-			if ((X >= 3) && (Y >= 7)) textBox63.Visible = true;
-			else textBox63.Visible = false;
-			if ((X >= 3) && (Y >= 8)) textBox73.Visible = true;
-			else textBox73.Visible = false;
-			if ((X >= 3) && (Y >= 9)) textBox83.Visible = true;
-			else textBox83.Visible = false;
-			if ((X >= 3) && (Y >= 10)) textBox93.Visible = true;
-			else textBox93.Visible = false;
-
-			if ((X >= 4) && (Y >= 2)) textBox14.Visible = true;
-			else textBox14.Visible = false;
-			if ((X >= 4) && (Y >= 3)) textBox24.Visible = true;
-			else textBox24.Visible = false;
-			if ((X >= 4) && (Y >= 4)) textBox34.Visible = true;
-			else textBox34.Visible = false;
-			if ((X >= 4) && (Y >= 5)) textBox44.Visible = true;
-			else textBox44.Visible = false;
-			if ((X >= 4) && (Y >= 6)) textBox54.Visible = true;
-			else textBox54.Visible = false;
-			if ((X >= 4) && (Y >= 7)) textBox64.Visible = true;
-			else textBox64.Visible = false;
-			if ((X >= 4) && (Y >= 8)) textBox74.Visible = true;
-			else textBox74.Visible = false;
-			if ((X >= 4) && (Y >= 9)) textBox84.Visible = true;
-			else textBox84.Visible = false;
-			if ((X >= 4) && (Y >= 10)) textBox94.Visible = true;
-			else textBox94.Visible = false;
-
-			if ((X >= 5) && (Y >= 2)) textBox15.Visible = true;
-			else textBox15.Visible = false;
-			if ((X >= 5) && (Y >= 3)) textBox25.Visible = true;
-			else textBox25.Visible = false;
-			if ((X >= 5) && (Y >= 4)) textBox35.Visible = true;
-			else textBox35.Visible = false;
-			if ((X >= 5) && (Y >= 5)) textBox45.Visible = true;
-			else textBox45.Visible = false;
-			if ((X >= 5) && (Y >= 6)) textBox55.Visible = true;
-			else textBox55.Visible = false;
-			if ((X >= 5) && (Y >= 7)) textBox65.Visible = true;
-			else textBox65.Visible = false;
-			if ((X >= 5) && (Y >= 8)) textBox75.Visible = true;
-			else textBox75.Visible = false;
-			if ((X >= 5) && (Y >= 9)) textBox85.Visible = true;
-			else textBox85.Visible = false;
-			if ((X >= 5) && (Y >= 10)) textBox95.Visible = true;
-			else textBox95.Visible = false;
-
-			if ((X >= 6) && (Y >= 2)) textBox16.Visible = true;
-			else textBox16.Visible = false;
-			if ((X >= 6) && (Y >= 3)) textBox26.Visible = true;
-			else textBox26.Visible = false;
-			if ((X >= 6) && (Y >= 4)) textBox36.Visible = true;
-			else textBox36.Visible = false;
-			if ((X >= 6) && (Y >= 5)) textBox46.Visible = true;
-			else textBox46.Visible = false;
-			if ((X >= 6) && (Y >= 6)) textBox56.Visible = true;
-			else textBox56.Visible = false;
-			if ((X >= 6) && (Y >= 7)) textBox66.Visible = true;
-			else textBox66.Visible = false;
-			if ((X >= 6) && (Y >= 8)) textBox76.Visible = true;
-			else textBox76.Visible = false;
-			if ((X >= 6) && (Y >= 9)) textBox86.Visible = true;
-			else textBox86.Visible = false;
-			if ((X >= 6) && (Y >= 10)) textBox96.Visible = true;
-			else textBox96.Visible = false;
-
-			if ((X >= 7) && (Y >= 2)) textBox17.Visible = true;
-			else textBox17.Visible = false;
-			if ((X >= 7) && (Y >= 3)) textBox27.Visible = true;
-			else textBox27.Visible = false;
-			if ((X >= 7) && (Y >= 4)) textBox37.Visible = true;
-			else textBox37.Visible = false;
-			if ((X >= 7) && (Y >= 5)) textBox47.Visible = true;
-			else textBox47.Visible = false;
-			if ((X >= 7) && (Y >= 6)) textBox57.Visible = true;
-			else textBox57.Visible = false;
-			if ((X >= 7) && (Y >= 7)) textBox67.Visible = true;
-			else textBox67.Visible = false;
-			if ((X >= 7) && (Y >= 8)) textBox77.Visible = true;
-			else textBox77.Visible = false;
-			if ((X >= 7) && (Y >= 9)) textBox87.Visible = true;
-			else textBox87.Visible = false;
-			if ((X >= 7) && (Y >= 10)) textBox97.Visible = true;
-			else textBox97.Visible = false;
-
-			if ((X >= 8) && (Y >= 2)) textBox18.Visible = true;
-			else textBox18.Visible = false;
-			if ((X >= 8) && (Y >= 3)) textBox28.Visible = true;
-			else textBox28.Visible = false;
-			if ((X >= 8) && (Y >= 4)) textBox38.Visible = true;
-			else textBox38.Visible = false;
-			if ((X >= 8) && (Y >= 5)) textBox48.Visible = true;
-			else textBox48.Visible = false;
-			if ((X >= 8) && (Y >= 6)) textBox58.Visible = true;
-			else textBox58.Visible = false;
-			if ((X >= 8) && (Y >= 7)) textBox68.Visible = true;
-			else textBox68.Visible = false;
-			if ((X >= 8) && (Y >= 8)) textBox78.Visible = true;
-			else textBox78.Visible = false;
-			if ((X >= 8) && (Y >= 9)) textBox88.Visible = true;
-			else textBox88.Visible = false;
-			if ((X >= 8) && (Y >= 10)) textBox98.Visible = true;
-			else textBox98.Visible = false;
-
-			if ((X >= 9) && (Y >= 2)) textBox19.Visible = true;
-			else textBox19.Visible = false;
-			if ((X >= 9) && (Y >= 3)) textBox29.Visible = true;
-			else textBox29.Visible = false;
-			if ((X >= 9) && (Y >= 4)) textBox39.Visible = true;
-			else textBox39.Visible = false;
-			if ((X >= 9) && (Y >= 5)) textBox49.Visible = true;
-			else textBox49.Visible = false;
-			if ((X >= 9) && (Y >= 6)) textBox59.Visible = true;
-			else textBox59.Visible = false;
-			if ((X >= 9) && (Y >= 7)) textBox69.Visible = true;
-			else textBox69.Visible = false;
-			if ((X >= 9) && (Y >= 8)) textBox79.Visible = true;
-			else textBox79.Visible = false;
-			if ((X >= 9) && (Y >= 9)) textBox89.Visible = true;
-			else textBox89.Visible = false;
-			if ((X >= 9) && (Y >= 10)) textBox99.Visible = true;
-			else textBox99.Visible = false;
-
-			if ((X >= 10) && (Y >= 2)) textBox20.Visible = true;
-			else textBox20.Visible = false;
-			if ((X >= 10) && (Y >= 3)) textBox30.Visible = true;
-			else textBox30.Visible = false;
-			if ((X >= 10) && (Y >= 4)) textBox40.Visible = true;
-			else textBox40.Visible = false;
-			if ((X >= 10) && (Y >= 5)) textBox50.Visible = true;
-			else textBox50.Visible = false;
-			if ((X >= 10) && (Y >= 6)) textBox60.Visible = true;
-			else textBox60.Visible = false;
-			if ((X >= 10) && (Y >= 7)) textBox70.Visible = true;
-			else textBox70.Visible = false;
-			if ((X >= 10) && (Y >= 8)) textBox80.Visible = true;
-			else textBox80.Visible = false;
-			if ((X >= 10) && (Y >= 9)) textBox90.Visible = true;
-			else textBox90.Visible = false;
-			if ((X >= 10) && (Y >= 10)) textBox100.Visible = true;
-			else textBox100.Visible = false;
-
-
+			pictureBox2.Image = MatrixRash(image);
+			Refresh();
+			pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 		}
 		private void button3_Click(object sender, EventArgs e) //запись в массив
 		{
-			int X = trackBar1.Value;
-			int Y = trackBar2.Value;
-			Array.Clear(arr, 0, arr.Length);
-
-			arr[0, 0] = Convert.ToByte(textBox1.Text); arr[1, 0] = Convert.ToByte(textBox2.Text); arr[2, 0] = Convert.ToByte(textBox3.Text); arr[3, 0] = Convert.ToByte(textBox4.Text); arr[4, 0] = Convert.ToByte(textBox5.Text); arr[5, 0] = Convert.ToByte(textBox6.Text); arr[6, 0] = Convert.ToByte(textBox7.Text); arr[7, 0] = Convert.ToByte(textBox8.Text); arr[8, 0] = Convert.ToByte(textBox9.Text); arr[9, 0] = Convert.ToByte(textBox10.Text);
-			arr[0, 1] = Convert.ToByte(textBox11.Text); arr[1, 1] = Convert.ToByte(textBox12.Text); arr[2, 1] = Convert.ToByte(textBox13.Text); arr[3, 1] = Convert.ToByte(textBox14.Text); arr[4, 1] = Convert.ToByte(textBox15.Text); arr[5, 1] = Convert.ToByte(textBox16.Text); arr[6, 1] = Convert.ToByte(textBox17.Text); arr[7, 1] = Convert.ToByte(textBox18.Text); arr[8, 1] = Convert.ToByte(textBox19.Text); arr[9, 1] = Convert.ToByte(textBox20.Text);
-			arr[0, 2] = Convert.ToByte(textBox21.Text); arr[1, 2] = Convert.ToByte(textBox22.Text); arr[2, 2] = Convert.ToByte(textBox23.Text); arr[3, 2] = Convert.ToByte(textBox24.Text); arr[4, 2] = Convert.ToByte(textBox25.Text); arr[5, 2] = Convert.ToByte(textBox26.Text); arr[6, 2] = Convert.ToByte(textBox27.Text); arr[7, 2] = Convert.ToByte(textBox28.Text); arr[8, 2] = Convert.ToByte(textBox29.Text); arr[9, 2] = Convert.ToByte(textBox30.Text);
-			arr[0, 3] = Convert.ToByte(textBox31.Text); arr[1, 3] = Convert.ToByte(textBox32.Text); arr[2, 3] = Convert.ToByte(textBox33.Text); arr[3, 3] = Convert.ToByte(textBox34.Text); arr[4, 3] = Convert.ToByte(textBox35.Text); arr[5, 3] = Convert.ToByte(textBox36.Text); arr[6, 3] = Convert.ToByte(textBox37.Text); arr[7, 3] = Convert.ToByte(textBox38.Text); arr[8, 3] = Convert.ToByte(textBox39.Text); arr[9, 3] = Convert.ToByte(textBox40.Text);
-			arr[0, 4] = Convert.ToByte(textBox41.Text); arr[1, 4] = Convert.ToByte(textBox42.Text); arr[2, 4] = Convert.ToByte(textBox43.Text); arr[3, 4] = Convert.ToByte(textBox44.Text); arr[4, 4] = Convert.ToByte(textBox45.Text); arr[5, 4] = Convert.ToByte(textBox46.Text); arr[6, 4] = Convert.ToByte(textBox47.Text); arr[7, 4] = Convert.ToByte(textBox48.Text); arr[8, 4] = Convert.ToByte(textBox49.Text); arr[9, 4] = Convert.ToByte(textBox50.Text);
-			arr[0, 5] = Convert.ToByte(textBox51.Text); arr[1, 5] = Convert.ToByte(textBox52.Text); arr[2, 5] = Convert.ToByte(textBox53.Text); arr[3, 5] = Convert.ToByte(textBox54.Text); arr[4, 5] = Convert.ToByte(textBox55.Text); arr[5, 5] = Convert.ToByte(textBox56.Text); arr[6, 5] = Convert.ToByte(textBox57.Text); arr[7, 5] = Convert.ToByte(textBox58.Text); arr[8, 5] = Convert.ToByte(textBox59.Text); arr[9, 5] = Convert.ToByte(textBox60.Text);
-			arr[0, 6] = Convert.ToByte(textBox61.Text); arr[1, 6] = Convert.ToByte(textBox62.Text); arr[2, 6] = Convert.ToByte(textBox63.Text); arr[3, 6] = Convert.ToByte(textBox64.Text); arr[4, 6] = Convert.ToByte(textBox65.Text); arr[5, 6] = Convert.ToByte(textBox66.Text); arr[6, 6] = Convert.ToByte(textBox67.Text); arr[7, 6] = Convert.ToByte(textBox68.Text); arr[8, 6] = Convert.ToByte(textBox69.Text); arr[9, 6] = Convert.ToByte(textBox70.Text);
-			arr[0, 7] = Convert.ToByte(textBox71.Text); arr[1, 7] = Convert.ToByte(textBox72.Text); arr[2, 7] = Convert.ToByte(textBox73.Text); arr[3, 7] = Convert.ToByte(textBox74.Text); arr[4, 7] = Convert.ToByte(textBox75.Text); arr[5, 7] = Convert.ToByte(textBox76.Text); arr[6, 7] = Convert.ToByte(textBox77.Text); arr[7, 7] = Convert.ToByte(textBox78.Text); arr[8, 7] = Convert.ToByte(textBox79.Text); arr[9, 7] = Convert.ToByte(textBox80.Text);
-			arr[0, 8] = Convert.ToByte(textBox81.Text); arr[1, 8] = Convert.ToByte(textBox82.Text); arr[2, 8] = Convert.ToByte(textBox83.Text); arr[3, 8] = Convert.ToByte(textBox84.Text); arr[4, 8] = Convert.ToByte(textBox85.Text); arr[5, 8] = Convert.ToByte(textBox86.Text); arr[6, 8] = Convert.ToByte(textBox87.Text); arr[7, 8] = Convert.ToByte(textBox88.Text); arr[8, 8] = Convert.ToByte(textBox89.Text); arr[9, 8] = Convert.ToByte(textBox90.Text);
-			arr[0, 9] = Convert.ToByte(textBox91.Text); arr[1, 9] = Convert.ToByte(textBox92.Text); arr[2, 9] = Convert.ToByte(textBox93.Text); arr[3, 9] = Convert.ToByte(textBox94.Text); arr[4, 9] = Convert.ToByte(textBox95.Text); arr[5, 9] = Convert.ToByte(textBox96.Text); arr[6, 9] = Convert.ToByte(textBox97.Text); arr[7, 9] = Convert.ToByte(textBox98.Text); arr[8, 9] = Convert.ToByte(textBox99.Text); arr[9, 9] = Convert.ToByte(textBox100.Text);
-
-
-			pictureBox2.Image = MatrixRash(image);
+			
+			pictureBox2.Image = Median(image);
 			Refresh();
 			pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
 		}
 
 		private Bitmap MatrixRash (Bitmap image)
 		{
-			int w = image.Width;
-			int h = image.Height;
-			int X = trackBar1.Value;
-			int Y = trackBar2.Value;
-			using Bitmap _tmp = new Bitmap(w, h, PixelFormat.Format24bppRgb);
+			int width = image.Width;
+			int height = image.Height;
+			string matrix = richTextBox1.Text;
+
+			Bitmap _tmp = new Bitmap(width, height, PixelFormat.Format24bppRgb);
 			_tmp.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-			using var g = Graphics.FromImage(_tmp);
-			g.DrawImageUnscaled(image, 0, 0);
-
-			byte[] inb = getImgBytes(_tmp);
-			byte[] outb = new byte[inb.Length];
-			byte[,,] outt = new byte[w*h/X*Y, X*Y, 3];
-
-
-			for (int i = 0; i < inb.Length-X*Y*3; i += 3 * X * Y)
+			using (Graphics g = Graphics.FromImage(_tmp))
 			{
-				int fl = 0;
-				for (int k = 0; k < X; k++)
-				for (int j = 0; j < Y; j++)
+				g.DrawImageUnscaled(image, 0, 0);
+				//g.DrawImage(input,0,0,new RectangleF(0,0,input.Width,input.Height),GraphicsUnit.Pixel);
+			}
+
+
+			byte[] old_bytes = getImgBytes(_tmp);
+			byte[] new_bytes = new byte[width * height * 3];
+
+
+			var core = getCoreFromStr(matrix);
+			int M = core.GetLength(0);
+			int N = core.GetLength(1);
+
+			ParallelOptions opt = new ParallelOptions();
+			if (ProcessorCount > 2)
+				opt.MaxDegreeOfParallelism = ProcessorCount - 2;
+			else opt.MaxDegreeOfParallelism = 1;
+			Parallel.For(0, width * height, opt, arr_i =>
+			{
+				int _i = arr_i / width;
+				int _j = arr_i - _i * width;
+
+				double sum1 = 0;
+				double sum2 = 0;
+				double sum3 = 0;
+
+				for (int ii = 0; ii < M; ++ii)   // h - (i - h)     h - i + h = 2h-i
 				{
-					outt[k, j, 0] = clmp(inb[3*(fl)*i]*arr[k,j]);
-					outt[k, j, 1] = clmp(inb[3*(fl)*i + 1]*arr[k,j]);
-					outt[k, j, 2] = clmp(inb[3*(fl)*i + 2]*arr[k,j]);
-					fl++;
+					int i = _i + ii - M / 2;
+					if (i < 0)
+						i *= -1;
+					if (i >= height)
+						i = 2 * height - i - 1;
+
+					for (int jj = 0; jj < N; ++jj)
+					{
+						int j = _j + jj - N / 2;
+
+						if (j < 0)
+							j *= -1;
+
+						if (j >= width)
+							j = 2 * width - j - 1;
+
+						sum1 += old_bytes[width * i * 3 + j * 3 + 0] * core[ii, jj];
+						sum2 += old_bytes[width * i * 3 + j * 3 + 1] * core[ii, jj];
+						sum3 += old_bytes[width * i * 3 + j * 3 + 2] * core[ii, jj];
+					}
+				}
+				new_bytes[arr_i * 3 + 0] = clmp(sum1);
+				new_bytes[arr_i * 3 + 1] = clmp(sum2);
+				new_bytes[arr_i * 3 + 2] = clmp(sum3);
+
+			});
+
+			Bitmap new_bitmap = new Bitmap(width, height, PixelFormat.Format24bppRgb);
+			new_bitmap.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+			writeImageBytes(new_bitmap, new_bytes);
+
+			return new_bitmap;
+		}
+
+
+		public Bitmap Median (Bitmap image)
+		{
+			int width = image.Width;
+			int height = image.Height;
+			int wnd_size = Convert.ToInt32(textBox1.Text);
+
+			Bitmap _tmp = new Bitmap(width, height, PixelFormat.Format24bppRgb);
+			_tmp.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+			using (Graphics g = Graphics.FromImage(_tmp))
+			{
+				g.DrawImageUnscaled(image, 0, 0);
+				//g.DrawImage(input,0,0,new RectangleF(0,0,input.Width,input.Height),GraphicsUnit.Pixel);
+			}
+
+			byte[] old_bytes = getImgBytes(_tmp);
+			byte[] new_bytes = new byte[width * height * 3];
+
+			//массивчик для медианы
+
+			Mutex mutex = new Mutex();
+			int iter_count = old_bytes.Length / 3;
+
+			//for (int _i = 0; _i < height; ++_i)
+			ParallelOptions opt = new ParallelOptions();
+			if (ProcessorCount > 2)
+				opt.MaxDegreeOfParallelism = ProcessorCount - 2;
+			else opt.MaxDegreeOfParallelism = 1;
+
+			//opt.MaxDegreeOfParallelism = 1;
+
+			Parallel.For(0, height, opt, _i =>
+			//for (int _i = 0; _i < height; ++_i)
+			{
+
+				var curPriority = Thread.CurrentThread.Priority;
+				Thread.CurrentThread.Priority = ThreadPriority.Lowest;
+
+				int[] wndR = new int[wnd_size * wnd_size];
+				int[] wndG = new int[wnd_size * wnd_size];
+				int[] wndB = new int[wnd_size * wnd_size];
+
+				for (int _j = 0; _j < width; ++_j)
+				{
+
+					for (int ii = 0; ii < wnd_size; ++ii) // h - (i - h)     h - i + h = 2h-i
+					{
+						for (int jj = 0; jj < wnd_size; ++jj)
+						{
+							int i = _i + ii - wnd_size / 2;
+
+							if (i < 0)
+								i *= -1;
+							if (i >= height)
+								i = 2 * height - i - 1;
+
+							int j = _j + jj - wnd_size / 2;
+							if (j < 0)
+								j *= -1;
+							if (j >= width)
+								j = 2 * width - j - 1;
+
+							wndR[ii * wnd_size + jj] = old_bytes[i * width * 3 + j * 3 + 0];
+							wndG[ii * wnd_size + jj] = old_bytes[i * width * 3 + j * 3 + 1];
+							wndB[ii * wnd_size + jj] = old_bytes[i * width * 3 + j * 3 + 2];
+						}
+					}
+
+					//new_bytes[_i * width * 3 + _j * 3 + 0] = (byte)QuickSelect.kthSmallest(wndR, 0, wndR.Length - 1, wnd_size * wnd_size / 2 - 1); 
+					//new_bytes[_i * width * 3 + _j * 3 + 1] = (byte)QuickSelect.kthSmallest(wndG, 0, wndG.Length - 1, wnd_size * wnd_size / 2 - 1); ;
+					//new_bytes[_i * width * 3 + _j * 3 + 2] = (byte)QuickSelect.kthSmallest(wndB, 0, wndB.Length - 1, wnd_size * wnd_size / 2 - 1); ;
+
+					//new_bytes[_i * width * 3 + _j * 3 + 0] = (byte)quickselect(wndR, wnd_size * wnd_size / 2);
+					//new_bytes[_i * width * 3 + _j * 3 + 1] = (byte)quickselect(wndG, wnd_size * wnd_size / 2);
+					//new_bytes[_i * width * 3 + _j * 3 + 2] = (byte)quickselect(wndB, wnd_size * wnd_size / 2);
+
+					new_bytes[_i * width * 3 + _j * 3 + 0] = (byte)quickselect2(wndR, 0, wnd_size * wnd_size, wnd_size * wnd_size / 2);
+					new_bytes[_i * width * 3 + _j * 3 + 1] = (byte)quickselect2(wndG, 0, wnd_size * wnd_size, wnd_size * wnd_size / 2);
+					new_bytes[_i * width * 3 + _j * 3 + 2] = (byte)quickselect2(wndB, 0, wnd_size * wnd_size, wnd_size * wnd_size / 2);
+
+
+				}
+
+				
+				Thread.CurrentThread.Priority = curPriority;
+
+			});
+
+
+			Bitmap new_bitmap = new Bitmap(width, height, PixelFormat.Format24bppRgb);
+			new_bitmap.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+			writeImageBytes(new_bitmap, new_bytes);
+
+			return new_bitmap;
+		}
+
+		static double[,] getCoreFromStr(string matrix)
+		{
+			
+			char[] splitter = { '\n' };
+			matrix = matrix.Replace('\r', ' ');
+			var str_list = matrix.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+			double[,] mat = new double[0, 0];
+
+
+			for (int i = 0; i < str_list.Count(); ++i)
+			{
+				
+				str_list[i] = str_list[i].Replace('\r', ' ');
+				var chars = str_list[i].Split(' ', (char)StringSplitOptions.RemoveEmptyEntries);
+
+				if (i == 0)
+				{
+					mat = new double[str_list.Length, chars.Length];
+				}
+
+				for (int j = 0; j < chars.Length; ++j)
+				{
+					var frac = Fraction.fromString(chars[j]);
+					mat[i, j] = frac.toDouble();
 				}
 			}
-				for (int i = 0; i<inb.Length-Width; i+=3) 
-				{
-						outb[i] = clmp(inb[i] * arr[0, 0]);
-						outb[i+1] = clmp(inb[i] * arr[0, 0]);
-						outb[i+2] = clmp(inb[i] * arr[0, 0]);
-						outb[i + Width] = clmp(inb[i] * arr[0, 1]);
-						outb[i + 1 + Width] = clmp(inb[i] * arr[0, 1]);
-						outb[i + 2 + Width] = clmp(inb[i] * arr[0, 1]);
-				}
 
+			return mat;
 
-
-
-			Bitmap image_out = new Bitmap(w, h, PixelFormat.Format24bppRgb);
-			writeImageBytes(image_out, outb);
-			return image_out;
 		}
+
+		private static (byte, int) quickselect((byte, int)[] arr, int k)
+		{
+			if (arr.Length == 1)
+				return arr[0];
+
+			Random r = new Random();
+			int pivot = r.Next(arr.Length);
+			//int pivot = 0;
+
+			var lows = arr.Where(x => x.Item1 < arr[pivot].Item1).ToArray();
+			var high = arr.Where(x => x.Item1 > arr[pivot].Item1).ToArray();
+			var eqv = arr.Where(x => x.Item1 == arr[pivot].Item1).ToArray();
+
+			if (k < lows.Length)
+				return quickselect(lows, k);
+			else if (k < lows.Length + eqv.Length)
+				return eqv[k - lows.Length];
+			else
+				return quickselect(high, k - lows.Length - eqv.Length);
+
+		}
+
+		private static int quickselect2(int[] arr, int left, int right, int k)
+		{
+			if (right - left == 1)
+				return arr[left];
+
+			int left_count = 0;
+			int eqv_count = 0;
+			int tmp = 0;
+
+			for (int i = left; i < right - 1; ++i)
+			{
+				if (arr[i] < arr[right - 1])
+				{
+					tmp = arr[i];
+					arr[i] = arr[left + left_count];
+					arr[left + left_count] = tmp;
+					left_count++;
+				}
+			}
+			for (int i = left + left_count; i < right - 1; ++i)
+			{
+				if (arr[i] == arr[right - 1])
+				{
+					tmp = arr[i];
+					arr[i] = arr[left + left_count + eqv_count];
+					arr[left + left_count + eqv_count] = tmp;
+					eqv_count++;
+				}
+			}
+			tmp = arr[right - 1];
+			arr[right - 1] = arr[left + left_count + eqv_count];
+			arr[left + left_count + eqv_count] = tmp;
+
+
+			if (k < left_count)
+				return quickselect2(arr, left, left + left_count, k);
+			else if (k < left_count + eqv_count)
+				return arr[left + left_count];
+			else
+				return quickselect2(arr, left + left_count + eqv_count, right, k - left_count - eqv_count);
+
+		}
+
 
 		#region get/write
 		static byte clmp(double d)
@@ -355,5 +368,22 @@ namespace image_edit_2
 			}
 		}
 		#endregion
+
+		private void Form5_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+			Form1 lob = new Form1();
+			lob.Show(this);
+			this.Hide();
+		}
 	}
 }

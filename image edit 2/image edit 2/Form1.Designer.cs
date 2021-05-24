@@ -226,7 +226,7 @@
 			this.button14.Name = "button14";
 			this.button14.Size = new System.Drawing.Size(125, 30);
 			this.button14.TabIndex = 17;
-			this.button14.Text = "Фильтрация";
+			this.button14.Text = "Фурье";
 			this.button14.UseVisualStyleBackColor = true;
 			this.button14.Click += new System.EventHandler(this.button14_Click);
 			// 
