@@ -47,3 +47,6 @@ C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image edit 2.csproj.G
 C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image edit 2.csproj.CoreCompileInputs.cache
 C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image edit 2.exe
 C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image edit 2.pdb
+C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image_edit_2.Form5.resources
+C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image_edit_2.Form7.resources
+C:\Users\remix\Desktop\image edit 2\image edit 2\obj\Debug\image edit 2.csprojAssemblyReference.cache
